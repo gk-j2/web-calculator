@@ -10,7 +10,7 @@ pipeline {
         }
         stage ('Run Docker Image') {
             steps {
-                sh 'docker run -it -p 80:80 web_calc_di:v1'
+                sh 'docker run -d -p 80:80 web_calc_di:v1'
             }
         }
     }
