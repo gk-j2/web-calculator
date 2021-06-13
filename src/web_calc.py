@@ -28,8 +28,8 @@ def calculate(file_json):
             return a+b
         elif operation == "-":
             return a-b
-        elif operation == "*":
-            return a*b
+        #elif operation == "*":
+        #    return a*b
         elif operation == "**":
             if b >= 0:
                 return a**int(b)
