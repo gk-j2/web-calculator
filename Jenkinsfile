@@ -2,9 +2,14 @@ pipeline {
     agent { node { label 'master' } }
 
     stages {
+        stage ('Stop and delete running docker container') {
+            steps {
+                sh 'docker kill $(docker ps -q)'
+                sh 'docker rm $(docker ps -a -q)'
+            }
+        }
         stage ('Build Docker Image') {
             steps {
-                sh 'whoami'
                 sh 'docker build -t web_calc_di:v1 .'
             }
         }
