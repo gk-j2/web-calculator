@@ -4,6 +4,8 @@ pipeline {
     stages {
         stage ('Stop and delete running docker container') {
             steps {
+                sh 'whoami'
+                sh 'groups jenkins'
                 sh 'docker kill $(docker ps -q)'
                 sh 'docker rm $(docker ps -a -q)'
             }
