@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage ('Cloning repository') {
             steps {
+                sh 'pwd'
                 sh 'git clone git@github.com:gk-j2/web-calculator.git'
             }
         }
