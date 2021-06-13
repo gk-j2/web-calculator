@@ -11,12 +11,15 @@ pipeine {
         }
         stage ('Build Docker Image') {
             steps {
+                echo "Start build docker image"
                 docker build -t "web_calc_di:v1" .
+                echo "End build docker image"
             }
         }
         stage ('Run Docker Image') {
             steps {
-                docker run -it -p "80:80" "web_calc_di:v1" 
+                echo "Start run docker image"
+                docker run -it -p "80:80" "web_calc_di:v1"
             }
         }
     }
