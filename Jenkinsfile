@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label 'master' } }
+    agent { node { label 'webapp' } }
 
     stages {
         stage ('Stop and delete running docker container') {
