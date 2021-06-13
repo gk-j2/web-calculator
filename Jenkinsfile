@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Stop and delete running docker container') {
             script {
-                if (docker ps -q) {
+                if (sh 'docker ps -q') {
                     sh 'docker kill $(docker ps -q)'
                     sh 'docker rm $(docker ps -a -q)'
                 }
