@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage ('Build Docker Image') {
             steps {
+                sh 'whoami'
                 sh 'docker build -t web_calc_di:v1 .'
             }
         }
