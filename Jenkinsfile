@@ -6,7 +6,7 @@ pipeine {
             steps {
                 mkdir /tmp/app
                 cd /tmp/app
-                git clone git@github.com:gk-j2/web-calculator.git
+                git clone "git@github.com:gk-j2/web-calculator.git"
             }
         }
         stage ('Build Docker Image') {
