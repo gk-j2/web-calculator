@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Cloning repository') {
             steps {
-                sh 'mkdir /tmp/app/web_calc'
+                sh 'mkdir /tmp/web_calc'
                 sh 'cd /tmp/app'
                 sh 'git clone git@github.com:gk-j2/web-calculator.git'
             }
