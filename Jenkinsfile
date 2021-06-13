@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('Cloning repository') {
             steps {
-                sh "ssh-agent bash -c 'ssh-add /somewhere/yourkey; git clone git@github.com:gk-j2/web-calculator.git'"
+                sh "ssh-agent bash -c 'ssh-add /home/user/.ssh/gk-j2; git clone git@github.com:gk-j2/web-calculator.git'"
             }
         }
         stage ('Build Docker Image') {
