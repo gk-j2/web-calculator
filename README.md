@@ -14,7 +14,7 @@ web-calculator работает по протоколу HTTP и принимае
 
 Параметры number_1 и number_2 должны быть числами,"operation" - строка операции, которая разрешена в микросервисе.
 
-Для использования можно использовать curl в следующем виде:
+Для тестирования можно использовать curl в следующем виде:
 ```bash
 curl -i -H "Content-Type: application/json" -X POST -d '{"a":number_1,"b":number_2,"operation":"allowed_operation"}' "http://127.0.0.1/calc/my_api/v1/"
 ```
