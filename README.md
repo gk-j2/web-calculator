@@ -16,7 +16,7 @@ web-calculator работает по протоколу HTTP и принимае
 
 Для использования можно использовать curl в следующем виде:
 ```bash
-curl -i -H "Content-Type: application/json" -X POST -d '{"a":number_1,"b":number_2,"operation":"allowed_operation"}' "http://127.0.0.1"
+curl -i -H "Content-Type: application/json" -X POST -d '{"a":number_1,"b":number_2,"operation":"allowed_operation"}' "http://127.0.0.1/calc/my_api/v1/"
 ```
 В данном случае адрес назначения 127.0.0.1 может быть заменен на любой необходимый для вас.
 
@@ -25,7 +25,7 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"a":number_1,"b":number
 "answer":answer
 ```
 
-web-calculator может использоваться локально на компьютере. Для этого необходимо установить необходимые зависимости, который находятся в файле src/requirements.txt, а затем запустить скрипт web_calc.py.
+web-calculator может использоваться локально на компьютере. Для этого необходимо установить необходимые зависимости, который находятся в файле src/requirements.txt, а затем запустить скрипт web_calc.py. В некоторых случаях для успешного запуска необходимы права суперпользователя.
 
 ```bash
 pip3 install --no-cache-dir -r requirements.txt
@@ -47,7 +47,7 @@ docker run --name=application -d -p 80:80 web_calc_di:v1'
 Запрос №1:
 
 ```bash
-curl -i -H "Content-Type: application/json" -X POST -d '{"a":2,"b":3,"operation":"+"}' "http://127.0.0.1"
+curl -i -H "Content-Type: application/json" -X POST -d '{"a":2,"b":3,"operation":"+"}' "http://127.0.0.1/calc/my_api/v1/"
 ```
 
 Ответ на запрос №1:
@@ -65,7 +65,7 @@ Date: Mon, 14 Jun 2021 03:53:16 GMT
 Запрос №2:
 
 ```bash
-curl -i -H "Content-Type: application/json" -X POST -d '{"a":2,"b":3,"operation":"log"}' "http://127.0.0.1"
+curl -i -H "Content-Type: application/json" -X POST -d '{"a":2,"b":3,"operation":"log"}' "http://127.0.0.1/calc/my_api/v1/"
 ```
 
 Ответ на запрос №2:
