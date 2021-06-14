@@ -25,6 +25,23 @@ curl -i -H "Content-Type: application/json" -X POST -d '{"a":number_1,"b":number
 "answer":answer
 ```
 
+web-calculator может использоваться локально на компьютере. Для этого необходимо установить необходимые зависимости, который находятся в файле src/requirements.txt, а затем запустить скрипт web_calc.py.
+
+```bash
+pip3 install --no-cache-dir -r requirements.txt
+python3 web_calc.py
+```
+
+Реализована поддержка использования Docker. Для этого сначала необходимо запустить сборку образа Docker, а затем запустить этот образ. Важно, чтобы иерархия проекта была соблюдена.
+
+```bash
+docker build -t web_calc_di:v1 .'
+docker run --name=application -d -p 80:80 web_calc_di:v1'
+```
+
+В дополнение реализована поддержка непрерывной интеграции с помощью Jenkins. Jenkins установлен локально. В нем реализован pipeline с несколькими ветвями. Ветка master развертывается на удаленном агенте Jenkins в облаке. Ветка develop развертывается на локальном мастере Jenkins.
+
+
 <h3 align="center">Примеры использования</h3>
 
 Запрос №1:
