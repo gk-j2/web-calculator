@@ -35,8 +35,8 @@ python3 web_calc.py
 Реализована поддержка использования Docker. Для этого сначала необходимо запустить сборку образа Docker, а затем запустить этот образ. Важно, чтобы иерархия проекта была соблюдена.
 
 ```bash
-docker build -t web_calc_di:v1 .'
-docker run --name=application -d -p 80:80 web_calc_di:v1'
+docker build -t web_calc_di:v1 .
+docker run --name=application -d -p 80:80 web_calc_di:v1
 ```
 
 В дополнение реализована поддержка непрерывной интеграции с помощью Jenkins. Jenkins установлен локально. В нем реализован pipeline с несколькими ветвями. Ветка master развертывается на удаленном агенте Jenkins в облаке. Ветка develop развертывается на локальном мастере Jenkins.
