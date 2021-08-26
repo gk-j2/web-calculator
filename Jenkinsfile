@@ -1,5 +1,9 @@
 pipeline {
+<<<<<<< HEAD
     agent { node { label 'webapp' } }
+=======
+    agent { node { label 'master' } }
+>>>>>>> 286862ae8117da57ca7f5dec005847adb23e6892
 
     stages {
         stage ('Stop and delete running docker container') {
@@ -20,4 +24,8 @@ pipeline {
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 286862ae8117da57ca7f5dec005847adb23e6892
