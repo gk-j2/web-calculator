@@ -64,7 +64,7 @@ class Calculator(object):
             else:
                 return "Error! Division by zero!"
 
-@appcalc.route('/calc/my_api/v1/', methods=['POST'])
+@appcalc.route('/calc/api/v1/calculate', methods=['POST'])
 def send_answer():
     if not request.json or (not 'a' in request.json and not 'b' in request.json and not 'operation' in request.json):
         abort(400)
@@ -79,6 +79,10 @@ def send_answer():
     else:
         mes = {'answer': "Error! Input argument is not valide!"}
         return mes, 201
+
+@appcalc.route('/calc/api/v1/signup', methods=['POST'])
+def sign_up():
+    pass
 
 if __name__ == '__main__':
     appcalc.run(host='0.0.0.0', port='80')
