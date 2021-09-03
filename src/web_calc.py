@@ -81,8 +81,31 @@ def send_answer():
         return mes, 201
 
 @appcalc.route('/calc/api/v1/signup', methods=['POST'])
+class User(object):
+    def __init__(self, name, email, login, password):
+        self.name = name
+        self.login = login
+        self.email = email
+        self.passw = password
+        
+def is_not_valid(json):
+    if (not 'name' in request.json or not 'email' in request.json or not 'login' in request.json or not 'password' in request.json):
+        return(True)
+    else:
+        if (not '@' in 'email'):
+            return(True) 
+        else:
+            return(False)
+
 def sign_up():
-    pass
+    if (not request.json or is_not_valid(request.json)):
+        abort(400)
+    params = []
+    params.append(request.json['name'])
+    params.append(request.json['login'])
+    params.append(request.json['email'])
+    params.append(request.json['password'])
+    mr_chel = User(name = params[0], login = params[1], email = params[2], password = params[3])
 
 if __name__ == '__main__':
     appcalc.run(host='0.0.0.0', port='80')
