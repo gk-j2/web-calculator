@@ -1,4 +1,4 @@
-FROM python:3.7.10-buster
+FROM python:3.9.10-buster
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
