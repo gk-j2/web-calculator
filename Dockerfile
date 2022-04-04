@@ -1,7 +1,5 @@
 FROM python:3.7.10-buster
 
-
-
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 COPY src/ .
