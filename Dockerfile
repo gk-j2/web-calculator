@@ -6,7 +6,8 @@ COPY src/ .
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-
+RUN useradd -ms /bin/bash newuser
+USER newuser
 
 CMD [ "python3", "web_calc.py" ]
 
